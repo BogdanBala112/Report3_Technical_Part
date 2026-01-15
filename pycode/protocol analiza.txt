@@ -1,0 +1,14 @@
+
+1. Corectia de rotatie a imaginilor se realizeaza folosind rutina software "rotation_correction.py", 
+specificand folderul sursa pentru setul de imagine de prelucrat. Rezultatele sunt stocate in folderul 
+"corrected_images".
+
+e.g. >python .\rotation_correction.py D:\\MLCELLM\\MDA231_ELK-KD_R1-P1_E1_26.09.23\\MDA231_ELK-KD_R1-P1_E1_26.09.23_P3_10x
+
+2. Determinarea diferentei intre secventele de achizitie
+    - se aplica morfologie, normalizare, iar mai apoi detective de contururi
+    - cel mai important este filtrarea contururilor, aceasta se face dupa:
+	* dimensiune
+	* se elimina imaginile in care apar foarte multe detectii celule pe toata suprafata, sau pe 50 %
+	* SAU dintre acestea se aleg doar cele cu o intensitate mai mare,
+	* se elimina contururile mai late decat o anumita distanta, determinata in cadrul rotatiei
